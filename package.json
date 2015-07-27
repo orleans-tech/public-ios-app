@@ -1,0 +1,25 @@
+{
+  "name": "orleanstech",
+  "description": "Orleans Tech / Public iOS App built with React-Native",
+  "repository": "https://github.com/orleans-tech/public-ios-app",
+  "license": "MIT",
+  "version": "0.1.0",
+  "author": {
+    "name": "Stan Chollet",
+    "email": "stanislas.chollet@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/orleans-tech/public-ios-app/issues"
+  },
+  "scripts": {
+    "start": "node_modules/react-native/packager/packager.sh"
+  },
+  "dependencies": {
+    "lodash": "^3.10.0",
+    "moment-timezone": "^0.4.0",
+    "react-native": "^0.8.0",
+    "react-native-i18n": "0.0.6",
+    "react-native-refreshable-listview": "^1.3.0",
+    "superagent": "^1.2.0"
+  }
+}
