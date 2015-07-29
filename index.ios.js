@@ -10,5 +10,5 @@ var {
   AppRegistry,
 } = React;
 
-l.setScopes(['api.members', 'api.events']);
+l.setScopes(['api.members', 'screen.members']);
 AppRegistry.registerComponent('orleanstech', () => NavigationScreen);

@@ -39,10 +39,12 @@ class MembersScreen extends React.Component {
   }
 
   componentDidMount(): void {
+    log('componentDidMount() start ');
     this.loadMembers(this.state.offset);
   }
 
   loadMembers(offset): Promise {
+    log('MembersApi() start ' + offset);
     return new Promise((resolve, reject) => {
         this.setState(update(this.state, {
           isLoading: {$set: true},
@@ -87,6 +89,7 @@ class MembersScreen extends React.Component {
   }
 
   pullToRefresh(): Promise {
+    log('pullToRefresh() start ');
     return this.loadMembers(0);
   }
 
@@ -97,6 +100,7 @@ class MembersScreen extends React.Component {
   }
 
   onEndReached(): void {
+    log('', this.state);
     if (this.state.isLoading || this.state.isInitialLoading) {
       return;
     }
@@ -107,10 +111,10 @@ class MembersScreen extends React.Component {
     return <RefreshableListView
       dataSource={this.state.dataSource}
       renderRow={this.renderMember}
-      loadData={this.pullToRefresh}
+      loadData={this.pullToRefresh.bind(this)}
       ignoreInertialScroll={true}
       automaticallyAdjustContentInsets={false}
-      onEndReached={this.onEndReached}
+      onEndReached={this.onEndReached.bind(this)}
       refreshDescription={I18n.t('screen.members.refresh_listview')}
     />;
   }
